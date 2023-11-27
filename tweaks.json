@@ -1,0 +1,32 @@
+[
+    {
+        "iconURL": "https://cdn.discordapp.com/attachments/1152880055320580197/1161028686594711583/OTABlocker.png?ex=6536cf39&is=65245a39&hm=627ee13e12ab18548c8936b9ddf21a2589a111e5d933191cb89463e35cc4d445&",
+        "name": "OTA Blocker",
+        "description": "Block future system updates by using this.",
+        "downloadURL": "https://cydia2.com/installprofile/otablocker/OTA-Blocker.mobileconfig"
+    },
+    {
+        "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1161033250127483000/IMG_5222.png?ex=6536d379&is=65245e79&hm=4636cdc10bafa52b2c74bba93a09aaef3a2111e01d2d81170dc6fda9c53e22ec&",
+        "name": "ShowCase",
+        "description": "The best way, to display your mockup with a background!",
+        "downloadURL": "https://www.icloud.com/shortcuts/e4229e8095a14f0ba0661c39869116c9"
+    },
+    {
+        "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1161037420628816033/IMG_5223.png?ex=6536d75c&is=6524625c&hm=752ae01dc00ef52d50114fec9a2100d2d40bcfc512d24477301c07c3cbee0b76&",
+        "name": "iPA Signer",
+        "description": "Sign your iPAS in the best way possible for FREE!",
+        "downloadURL": "https://github.com/hypertweaks/Elite-Apps/releases/download/Elite/Elite.Signer.mobileconfig"
+    },
+    {
+        "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1161043314011812021/jailbreak.png?ex=6536dcd9&is=652467d9&hm=342a077ac8db3d426f274048f4c75b66613b26ff27e17aefd077478603883a13&",
+        "name": "Elite X iPAS",
+        "description": "Dont have ideas for any iPAS to install? Use Elite iPAS.",
+        "downloadURL": "https://www.icloud.com/shortcuts/a953dfea0c60481eb669d84fd6a791a3"
+    },
+    {
+        "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1161207170780635166/applock.png?ex=65377573&is=65250073&hm=b66c9b34c3a9bdb5120761c21e46deab2d5d707693b5f0ffa2f044baf9f7228a&",
+        "name": "AppLock",
+        "description": "Lock a app the shortcut way.",
+        "downloadURL": "download_url_5"
+    }
+]

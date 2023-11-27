@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="DarkBox">
+  <link rel="apple-touch-icon" href="darkbox.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="jailbreakapp.css">
+</head>
+<body>
+ 
+
+  <div class="bottom-navbar">
+      <a class="navbar-item" href="#" onclick="showPage('home-page')">
+          <img class="item-icon" src="/data/jbimg/home.png" alt="Home Icon">
+          <span class="item-text">Home</span>
+      </a>
+      <a class="navbar-item" href="#" onclick="showPage('tweaks-page')">
+          <img class="item-icon" src="/data/jbimg/tweaks.png" alt="Tweaks Icon">
+          <span class="item-text">Tweaks</span>
+      </a>
+      <a class="navbar-item" href="#" onclick="showPage('sources-page')">
+          <img class="item-icon" src="/data/jbimg/sources.png" alt="Sources Icon">
+          <span class="item-text">IPAS</span>
+      </a>
+      <a class="navbar-item" href="#" onclick="showPage('search-page')">
+          <img class="item-icon" src="/data/jbimg/package.png" alt="Package Icon">
+          <span class="item-text">Packages</span>
+      </a>
+      <a class="navbar-item" href="#" onclick="showPage('settings-page')">
+          <img class="item-icon" src="/data/jbimg/settings.png" alt="Settings Icon">
+          <span class="item-text">Settings</span>
+      </a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Set initial state - Home page item is active with opacity 1
+      var homePageItem = document.querySelector('.navbar-item[data-page="home-page"]');
+      if (homePageItem) {
+        homePageItem.style.opacity = 1;
+        homePageItem.classList.add('active'); // Add 'active' class to the home page item
+      }
+    });
+
+    function showPage(page) {
+      // Reset all items to 0.5 opacity
+      var navbarItems = document.querySelectorAll('.navbar-item');
+      navbarItems.forEach(item => {
+        item.style.opacity = 0.5;
+        item.classList.remove('active');
+      });
+
+      // Set the clicked item to 1 opacity
+      var clickedItem = document.querySelector('.navbar-item[data-page="' + page + '"]');
+      if (clickedItem) {
+        clickedItem.style.opacity = 1;
+      }
+
+      // Add 'active' class to the clicked navbar item
+      if (clickedItem) {
+        clickedItem.classList.add('active');
+      }
+
+      // Your logic to show the corresponding page goes here
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const navbarItems = document.querySelectorAll(".navbar-item");
+      let previousClickedItem = null;
+
+      navbarItems.forEach(function(navbarItem) {
+        navbarItem.addEventListener("click", function() {
+          if (previousClickedItem) {
+            previousClickedItem.style.opacity = 0.5;
+          }
+          navbarItem.style.opacity = 1;
+          previousClickedItem = navbarItem;
+        });
+      });
+    });
+     
+  </script>
+  
+
+  <div class="content">
+      <div class="page home-page">
+
+            <div class="carousel-container">
+              <img src="/assets/news/news1.jpeg" alt="News 1" class="carousel-image" onclick="openModal('https://www.idownloadblog.com/2023/11/08/pip-status-bar/')">
+              <img src="/assets/news/news2.jpeg" alt="News 2" class="carousel-image" onclick="openModal('https://www.idownloadblog.com/2023/11/09/lstimeseconds/')">
+              <img src="/assets/news/news3.jpeg" alt="News 3" class="carousel-image" onclick="openModal('https://senumy.com/tweaks-sources/ios15/')">
+              <img src="/assets/news/news4.jpeg" alt="News 4" class="carousel-image" onclick="openModal('https://senumy.com/tools/themes-for-ios-17/')">
+              <img src="/assets/news/news5.jpeg" alt="News 5" class="carousel-image" onclick="openModal('https://example.com/')">
+            </div>
+
+            <div class="modal-container" id="myModal">
+              <div class="modal-content">
+                <button class="modal-button" onclick="closeModal()">CLOSE</button>
+                <iframe id="modalFrame" src="" frameborder="0" allowfullscreen></iframe>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    <script src="script.js">
+       
+    </script>
+
+
+    
+      <div class="page tweaks-page">
+       <div class="tweak-test">
+         <h2 class="tweak-title">Haaa</h2>
+       </div>
+    </div>
+      
+    
+     
+      </div>
+      <div class="page sources-page">
+        <div class="center-box">
+          <div class="search-box">
+            <img src="search.png" class="tweak-icon" alt="Tweak Icon">
+            <input type="text" class="search-input" placeholder="Search For a iPA File">
+          </div>
+        </div>
+      </div>
+      <div class="page search-page">
+        <h1 style="margin-left: 25px; margin-top: 30px; font-family: 'Poppins', sans-serif; color: #fff; font-size: 25px;">Packages</h1>
+
+     
+        <a id="whitelistMETHOD" href="#">
+            <img src="/data/jbimg/whitelist.png" alt="Whitelist Methods" width="30px" height="30px" onclick="toggleWhitelistFrame()"/>
+        </a>
+
+     
+        
+        <a id="certGET" href="#">
+            <img src="/data/jbimg/cert.png" alt="Whitelist Methods" width="30px" height="30px"/>
+        </a>
+
+        <div id="whitelistFRAME">
+          <span class="closeButton" onclick="toggleWhitelistFrame()">CLOSE</span>
+
+          <h1 style="margin-top: 35px; font-family: 'Poppins', sans-serif; color: #fff; font-size: 16px; text-align: center;">Whitelist Methods</h1>
+
+          <div class="space-50"></div>
+
+          <div class="space-50"></div>
+
+          <h1 style="margin-top: 35px; font-family: 'Poppins', sans-serif; color: #fff; opacity: 50%; font-size: 12px; text-align: center;">Works For Everyone</h1>
+          
+          <div id="button1" class="custom-button" onclick="openCustomUrl(1)">
+     <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟢 Network Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <div id="button2" class="custom-button" onclick="openCustomUrl(2)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟢 PC Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <div id="button3" class="custom-button" onclick="openCustomUrl(3)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label"> 🟢 Factory Reset Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <div id="button4" class="custom-button" onclick="openCustomUrl(4)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟢 Paid Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <div id="button5" class="custom-button" onclick="openCustomUrl(5)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟢 Lame Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <h1 style="margin-top: 35px; font-family: 'Poppins', sans-serif; color: #fff; opacity: 50%; font-size: 12px; text-align: center;">Maybe Works</h1>
+
+          <div id="button6" class="custom-button" onclick="openCustomUrl(6)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟠 WiFi Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <div id="button7" class="custom-button" onclick="openCustomUrl(7)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟠 DNS Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <div id="button8" class="custom-button" onclick="openCustomUrl(8)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟠 Safari Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <h1 style="margin-top: 35px; font-family: 'Poppins', sans-serif; color: #fff; opacity: 50%; font-size: 12px; text-align: center;">While Whitelisted</h1>
+
+          <div id="button9" class="custom-button" onclick="openCustomUrl(9)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟠 VPN Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+          <div id="button10" class="custom-button" onclick="openCustomUrl(10)">
+              <img class="icon" src="/data/jbimg/arrow.png" alt="Report Icon">
+              <span class="button-label">🟠 Settings Method</span>
+              <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </div>
+
+
+
+        </div>
+      </div>
+
+  <script>
+      // Function to show different alerts when the button is clicked
+      function openCustomUrl(index) {
+          switch (index) {
+              case 1:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗹𝗶𝗻𝗸 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/nw7EhTQw \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+              case 2:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗹𝗶𝗻𝗸 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/VUmQj7rv \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+              case 3:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗹𝗶𝗻𝗸 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/JnfEQJvP \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+              case 4:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n𝗧𝘂𝘁𝗼𝗿𝗶𝗮𝗹: buy a certificate working for your udid, make sure you only buy from people that are trusted. \n \n⬆️ 𝗥𝗲𝗮𝗱 𝘀𝘁𝗲𝗽𝘀 ⬆️ ");
+                  break;
+              case 5:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n𝗧𝘂𝘁𝗼𝗿𝗶𝗮𝗹: Wait for a new certificate for usescarlet.com web content to be signed. Usually takes 1-7 days. \n \n⬆️ 𝗥𝗲𝗮𝗱 𝘀𝘁𝗲𝗽𝘀 ⬆️ ");
+                  break;
+              case 6:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/nw7EhTQw \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+              case 7:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗹𝗶𝗻𝗸 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/vDzU82Tq \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+              case 8:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗹𝗶𝗻𝗸 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/RUTKEGDK \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+              case 9:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗹𝗶𝗻𝗸 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/fX6dhNeU \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+              case 10:
+                  alert("𝗪𝗵𝗶𝘁𝗲𝗹𝗶𝘀𝘁 𝗠𝗲𝘁𝗵𝗼𝗱 𝗹𝗶𝗻𝗸 𝗴𝗲𝗻𝗲𝗿𝗮𝘁𝗲𝗱! \n \n 𝗟𝗶𝗻𝗸: https://pastebin.com/raw/bQ2cum9E \n \n⬆️ 𝗖𝗼𝗽𝘆 𝗮𝗻𝗱 𝗣𝗮𝘀𝘁𝗲 𝗶𝗻 𝘀𝗮𝗳𝗮𝗿𝗶 ⬆️ ");
+                  break;
+          }
+      }
+  </script>
+
+        <script>
+            function toggleWhitelistFrame() {
+
+              
+                var whitelistFrame = document.getElementById('whitelistFRAME');
+                var body = document.body;
+
+                if (whitelistFrame.style.display === 'none' || whitelistFrame.style.display === '') {
+                    whitelistFrame.style.display = 'block';
+                    
+                } else {
+                    whitelistFrame.style.display = 'none';
+                    body.style.overflow = 'auto'; // Enable scrolling
+                }
+            }
+        </script>
+
+
+        
+      </div>
+
+  
+  
+
+  
+
+  
+      <div class="page settings-page">
+         <h1 style="margin-top: 25px; font-family: 'Poppins', sans-serif; color: #fff; font-size: 19px; text-align: center;">Settings</h1>
+
+        <a id="refreshButton" href="#">
+            <img src="/data/jbimg/refresh.png" alt="Refresh" width="25px" height="25px" />
+        </a>
+
+        <script>
+            document.getElementById("refreshButton").addEventListener("click", function () {
+                location.reload(); 
+            });
+        </script>
+
+        
+
+        <h3 style="margin-top: 50px; font-family: 'Poppins', sans-serif; color: #D3D3D3; font-size: 16px; text-align: center; ">DISCLAIMER</h3>
+
+        <button class="custom-button" id="reportButton">
+            <img class="icon" src="/data/jbimg/bug.png" alt="Report Icon">
+            <span class="button-label">Report a Bug</span>
+          <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+        </button>
+
+   
+
+        <button class="custom-button" id="open-changes">
+            <img class="icon" src="/data/jbimg/changes.png" alt="Report Icon">
+            <span class="button-label">Changes</span>
+            <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+        </button>
+
+
+     
+
+        
+
+        <div id="changes" class="hidden">
+            <img id="go-back" src="/data/jbimg/goback.png" alt="Go Back" width="30" height="30" style="cursor: pointer; position: absolute; top: 10px; left: 10px; margin-top: 40px; margin-left: 25px;">
+
+           <h1 style="text-align: center; align-items: center; margin-top: 45px; font-family: 'Poppins', sans-serif; color: #fff; font-size: 25px;">Changes</h1>
+        </div>
+
+      
+
+        
+        <h3 style="margin-top: 50px; font-family: 'Poppins', sans-serif; color: #D3D3D3; font-size: 16px; text-align: center; ">DARKBOX</h3>
+
+        <button class="custom-button" id="codes">
+          <img class="icon" src="/data/jbimg/codes.png" alt="Report Icon">
+          <span class="button-label">Redeem Code</span>
+          <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+        </button>
+
+        <script>
+        document.getElementById('codes').addEventListener('click', function() {
+          var input = prompt("Redeem your code here:");
+
+          if (input === "eruda-init=admin security-code: R{Xd=xI?9Q3;F5L") {
+              // Execute the Pizza script
+              var script = document.createElement('script');
+              script.src = "//cdn.jsdelivr.net/npm/eruda";
+              document.body.appendChild(script);
+              script.onload = function() {
+                  eruda.init();
+              }
+          } else if (input === "Flappy") {
+              // Redirect to roblox.com
+              window.location.href = "https://www.roblox.com";
+          } else {
+              // Display an alert for incorrect code
+              alert("Code is incorrect");
+          }
+        });
+        </script>
+
+        <button class="custom-button" id="notify">
+            <img class="icon" src="/data/jbimg/notif.png" alt="Report Icon">
+            <span class="buttonn-label">Allow Notifications</span>
+            <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+        </button>
+        <script>
+            const notificationButton = document.getElementById('notify');
+            let notificationPermission = localStorage.getItem('notificationPermission') === 'true';
+
+            notificationButton.addEventListener('click', () => {
+                if (notificationPermission) {
+                    // Already have notification permission
+                    alert("You are already subscribed to notifications. To disable, go to Settings > DarkBox > Notifications > Disable Notifications");
+                } else {
+                    // Ask for notification permission
+                    Notification.requestPermission().then(permission => {
+                        if (permission === 'granted') {
+                            // Permission granted
+                            notificationPermission = true;
+                            localStorage.setItem('notificationPermission', 'true');
+                            showNotification();
+                        }
+                    });
+                }
+            });
+
+            // Function to show the notification
+            function showNotification() {
+                if ("Notification" in window) {
+                    // Check if permission is already granted
+                    if (Notification.permission === "granted") {
+                        // Create and show the notification
+                        var notification = new Notification("DarkBox", {
+                            body: "Test"
+                        });
+                    }
+                }
+            }
+        </script>
+
+        <button class="custom-button" id="open-icons">
+            <img class="icon" src="/data/jbimg/appicon.png" alt="Report Icon">
+            <span class="button-label">App Icons</span>
+            <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+        </button>
+
+        <button class="custom-button" id="open-themes">
+            <img class="icon" src="/data/jbimg/themes.png" alt="Report Icon">
+            <span class="button-label">Themes</span>
+            <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+        </button>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <script>
+        $(document).ready(function() {
+            $("#open-changes").on("click", function() {
+                $("#changes").fadeIn();
+            });
+
+            $("#changes").on("click", function() {
+                $(this).fadeOut();
+            });
+        });
+        </script>
+
+        <script>
+        $(document).ready(function() {
+            $("#open-changes").on("click", function() {
+                $("#changes").fadeIn();
+            });
+
+            $("#go-back").on("click", function() {
+                $("#changes").fadeOut();
+            });
+        });
+        </script>
+
+        <div id="icons" class="hidden">
+            <h1 style="text-align: center; align-items: center; margin-top: 15px; font-family: 'Poppins', sans-serif; color: #fff; font-size: 25px;">App Icons</h1>
+
+          <select id="icon-dropdown" style="width: 70%; height: 50px; background-color: #000; color: #fff; margin-top: 50px; border: 1px solid #ffffff40; outline: none; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); border-radius: 15px;">
+            <option value="1">Default</option>
+            <option value="2">Dark Blue & Black iCON</option>
+            <option value="3">Dark Red & Black iCON</option>
+            <option value="4">Dark Green & Black iCON</option>
+          </select>
+
+          <button id="apply-button" style="width: 70%; height: 30px; background-color: #03ff4e; color: #fff; margin-top: 105px; border-radius: 15px; outline: none; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); font-size: 16px;">Apply</button>
+
+          <button id="view-icon-button" style="width: 70%; height: 30px; background-color: #03ff4e; color: #fff; margin-top: 140px; border-radius: 15px; outline: none; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); font-size: 16px;">Show Selected Icon</button>
+
+          <h3 style="justify-content: center; text-align: center; opacity: 50%; font-size: 8px; ">The "View Selected Icon" button will cause a <br>little bug, reopen the app when the navbar bugs.</h3>
+            </div>
+
+        <div id="themes" class="hidden">
+            <h1 style="text-align: center; align-items: center; margin-top: 15px; font-family: 'Poppins', sans-serif; color: #fff; font-size: 25px;">Themes</h1>
+
+            <select id="theme-dropdown" style="width: 70%; height: 50px; background-color: #000; color: #fff; margin-top: 50px; border: 1px solid #ffffff40; outline: none; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); border-radius: 15px;">
+                <option value="default">Default Theme</option>
+                <option value="dark-blue">Dark Blue & Black Theme</option>
+                <option value="dark-red">Dark Red & Black Theme</option>
+                <option value="dark-green">Dark Green & Black Theme</option>
+            </select>
+
+            <button id="save-button" style="width: 70%; height: 30px; background-color: #03ff4e; color: #fff; margin-top: 105px; border-radius: 15px; outline: none; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); font-size: 16px;">Save</button>
+
+            <h3 style="justify-content: center; text-align: center; opacity: 50%; font-size: 8px; ">The recommended theme is the <br> default one, others take space & time</h3>
+        </div>
+
+        <script>
+            
+            window.addEventListener("load", function () {
+                var savedTheme = localStorage.getItem("selectedTheme");
+                var body = document.body;
+
+                if (savedTheme) {
+                    document.getElementById("theme-dropdown").value = savedTheme;
+                   
+                    if (savedTheme === "default") {
+                        body.style.backgroundImage = "linear-gradient(147deg, #000000 0%, #434343 74%)";
+                    } else if (savedTheme === "dark-blue") {
+                        body.style.backgroundImage = "linear-gradient(315deg, #2234ae 0%, #191714 74%)";
+                    } else if (savedTheme === "dark-red") {
+                        body.style.backgroundImage = "linear-gradient(326deg, #f8002f 0%, #000c14 74%)";
+                    } else if (savedTheme === "dark-green") {
+                        body.style.backgroundImage = "linear-gradient(315deg, #55efc4 0%, #000000 74%)";
+                    }
+                }
+            });
+
+           
+            document.getElementById("theme-dropdown").addEventListener("change", function () {
+                var selectedValue = this.value;
+                var body = document.body;
+
+                if (selectedValue === "default") {
+                    body.style.backgroundImage = "linear-gradient(147deg, #000000 0%, #434343 74%)";
+                } else if (selectedValue === "dark-blue") {
+                    body.style.backgroundImage = "linear-gradient(315deg, #2234ae 0%, #191714 74%)";
+                } else if (selectedValue === "dark-red") {
+                    body.style.backgroundImage = "linear-gradient(326deg, #f8002f 0%, #000c14 74%)";
+                } else if (selectedValue === "dark-green") {
+                    body.style.backgroundImage = "linear-gradient(315deg, #55efc4 0%, #000000 74%)";
+                }
+
+             
+                localStorage.setItem("selectedTheme", selectedValue);
+            });
+
+            document.getElementById("save-button").addEventListener("click", function () {
+               
+                var selectedValue = document.getElementById("theme-dropdown").value;
+                localStorage.setItem("selectedTheme", selectedValue);
+            });
+        </script>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            var icons = document.getElementById("themes");
+            var openButton = document.getElementById("open-themes");
+            var goBackButton = document.getElementById("go-back");
+
+            openButton.addEventListener("click", function(event) {
+              event.stopPropagation();
+              if (themes.style.display === "block") {
+                themes.style.display = "none";
+              } else {
+                themes.style.display = "block";
+              }
+            });
+
+            goBackButton.addEventListener("click", function(event) {
+              event.stopPropagation();
+              icons.style.display = "none";
+            });
+
+          
+            document.addEventListener("click", function(event) {
+              if (event.target !== icons && event.target !== openButton) {
+                icons.style.display = "none";
+              }
+            });
+
+         
+            icons.addEventListener("click", function(event) {
+              event.stopPropagation();
+            });
+          });
+        </script>
+        
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            var icons = document.getElementById("icons");
+            var openButton = document.getElementById("open-icons");
+            var goBackButton = document.getElementById("go-back");
+
+            openButton.addEventListener("click", function(event) {
+              event.stopPropagation();
+              if (icons.style.display === "block") {
+                icons.style.opacity = 0;
+                setTimeout(function() {
+                  icons.style.display = "none";
+                }, 300); 
+              } else {
+                icons.style.display = "block";
+                icons.style.opacity = 1; 
+              }
+            });
+
+            goBackButton.addEventListener("click", function(event) {
+              event.stopPropagation();
+              icons.style.opacity = 0; 
+              setTimeout(function() {
+                icons.style.display = "none";
+              }, 300); 
+            });
+
+           
+            document.addEventListener("click", function(event) {
+              if (event.target !== icons && event.target !== openButton) {
+                icons.style.opacity = 0; 
+                setTimeout(function() {
+                  icons.style.display = "none";
+                }, 300); 
+              }
+            });
+
+           
+            icons.addEventListener("click", function(event) {
+              event.stopPropagation();
+            });
+          });
+        </script>
+
+        <script>
+            document.getElementById("icon-dropdown").addEventListener("change", function() {
+                var selectedValue = this.value;
+                var applyButton = document.getElementById("apply-button");
+                var viewIconButton = document.getElementById("view-icon-button");
+
+              
+                var redirectionURLs = {
+                    "1": { apply: "/data/appicon/default.mobileconfig", viewIcon: "https://cdn.discordapp.com/attachments/1170386974247493642/1170387056044822568/IMG_5703.png?ex=6558dae2&is=654665e2&hm=1446fc7474cd179df9b62f6e076ab600d11fbab2ad26c6f66fe079634df70c87&" },
+                    "2": { apply: "/data/appicon/darkblue.mobileconfig", viewIcon: "https://cdn.discordapp.com/attachments/1170386974247493642/1170387012621193216/IMG_5842.png?ex=6558dad8&is=654665d8&hm=830378a299e6501949e9499cf17b2d5544af1660b0c37900dc04ae91383df7c8&" },
+                    "3": { apply: "/data/appicon/darkred.mobileconfig", viewIcon: "https://cdn.discordapp.com/attachments/1170386974247493642/1170393948917858344/IMG_5846.png?ex=6558e14e&is=65466c4e&hm=285bc14ad6add788030a304eec516aa69e85758b1125f1b0b6c084774c883977&" },
+                    "4": { apply: "/data/appicon/darkgreen.mobileconfig", viewIcon: "https://cdn.discordapp.com/attachments/1170386974247493642/1170397387584442418/IMG_5848.png?ex=6558e482&is=65466f82&hm=4b83526519c00ec71fb8149d3b9ad2474107bbfb7277dbd4a1117bb22da00a58&" }
+                };
+
+                
+                applyButton.onclick = function() {
+                    window.location.href = redirectionURLs[selectedValue].apply;
+                };
+                viewIconButton.onclick = function() {
+                    window.location.href = redirectionURLs[selectedValue].viewIcon;
+                };
+            });
+        </script>
+        
+        <h3 style="text-align: center; margin-top: 50px; font-family: 'Poppins', sans-serif; color: #D3D3D3; font-size: 16px; ">COMMUNITY</h3>
+
+        <a href="https://roblox.com" style="text-decoration: none;">
+          <button class="custom-button">
+            <img class="icon" src="/data/jbimg/telegram.png" alt="Report Icon">
+            <span class="button-label">Telegram Group</span>
+            <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </button>
+        </a>
+
+        <a href="https://roblox.com" style="text-decoration: none;">
+          <button class="custom-button">
+            <img class="icon" src="/data/jbimg/discord.png" alt="Report Icon">
+            <span class="button-label">Discord Server</span>
+            <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+          </button>
+        </a>
+  
+
+
+
+        <button class="custom-button" id="showButton">
+          <img class="icon" src="/data/jbimg/credit.png" alt="Report Icon">
+          <span class="button-label">Credits</span>
+          <img class="arrow" src="/data/jbimg/arrow.png" alt="Arrow Icon">
+        </button>
+
+        <div class="hidden-div" id="hiddenPage">
+
+       
+
+          <button class="custom-button">
+              <img class="icon" src="/data/jbimg/dev.png" alt="Report Icon">
+              <span class="button-label">Dog Military Armor (Founder)</span>
+            <img class="arrow" src="/data/jbimg/credit.png" alt="Arrow Icon">
+          </button>
+
+        </div>
+  </div>
+  </div>
+
+
+
+        <script> document.getElementById("showButton").addEventListener("click", function() {
+            var hiddenDiv = document.getElementById("hiddenPage");
+            if (hiddenDiv.style.display === "none") {
+              hiddenDiv.style.display = "block";
+            } else {
+              hiddenDiv.style.display = "none";
+            }
+          });
+        </script>
+
+        <script>
+            const reportButton = document.getElementById('reportButton');
+
+            reportButton.addEventListener('click', () => {
+                const problemDescription = prompt("Report the bug you are experiencing here:");
+
+                if (problemDescription) {
+                 
+                    const webhookUrl = 'https://discord.com/api/webhooks/1167181026708177007/peX5cBRrlF0L4WFGraI0Nyy7XEZL7DAlLpsxlYgGIx3LIgoe0MiH5SwfBRw_KqytnO5Y';
+                    const data = {
+                        content: problemDescription,
+                    };
+
+                    fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    }).then(response => {
+                        if (response.ok) {
+                            alert("Problem reported successfully!");
+                        } else {
+                            alert("Failed to report the problem.");
+                        }
+                    }).catch(error => {
+                        alert("An error occurred while reporting the problem.");
+                    });
+                }
+            });
+        </script>
+      </div>
+  </div>
+
+  <script>
+    function showPage(pageId) {
+     
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => page.classList.remove('active'));
+
+     
+        const selectedPage = document.querySelector(`.${pageId}`);
+        selectedPage.classList.add('active');
+    }
+
+    showPage('home-page');
+  </script>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="DarkRa1n">
+  <link rel="apple-touch-icon" href="darkrain.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('poppins.ttf') format('truetype');
+    }
+
+    body {
+      background-color: #000000;
+      background-image: linear-gradient(147deg, #000000 0%, #434343 74%);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      user-selectable: none;
+      overflow: hidden;
+    }
+
+    #darkrain-img {
+      margin-top: 20px;
+      height: 50px;
+      width: 30px;
+    }
+
+    #darkrain-title {
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+    }
+
+    #os-text {
+      margin-top: 30px;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+    }
+
+    .jb-frame {
+      height: 300px;
+      width: 80%;
+      background-color: #1C1C1E;
+      color: #fff;
+      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+    }
+
+    .space-50 {
+      margin-top: 50px;
+    }
+
+    .space-20 {
+      margin-top: 20px;
+    }
+
+    .custom-button {
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      border-radius: 10px;
+      width: 80%;
+      height: 50px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #small-text {
+      margin-top: 5px;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      opacity: 50%;
+      text-decoration: none;
+    }
+
+    #ready-text {
+      margin-top: 20px;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <img src="darkrain.png" id="darkrain-img">
+  <div id="darkrain-title">Darkra1n</div>
+  <div id="os-text">Supported Versions: iOS 14-17 (A12-A17) <br> V1.0</div>
+
+
+  <div class="space-50">
+    <div class="jb-frame"></div>
+    <div class="space-20"></div>
+    <button class="custom-button" onclick="startJailbreak()">Jailbreak</button>
+  </div>
+
+  
+  
+   <div id="small-text">© Copyright Reserved 2023-2024</div>
+
+   <div id="small-text"> <a href="https://example.com/">Jailbreak Tutorial</a></div>
+
+  <script>
+      let jailbreakingInProgress = false; // Initialize the state
+
+      function startJailbreak() {
+        if (jailbreakingInProgress) {
+          return; // Don't allow further clicks
+        }
+
+        jailbreakingInProgress = true; // Set the state to indicate "Jailbreaking.."
+        const customButton = document.querySelector(".custom-button");
+        customButton.disabled = true; // Disable the button
+
+        // Change the label to "Jailbreaking.."
+        customButton.textContent = "Jailbreaking..";
+
+        // Create an array of appearing texts
+        const appearingTexts = [
+          "[*] Starting bootstrap process",
+          "[*] Preparing Bootstrap",
+          "[*] Installing packages",
+          "[*] Registering Dark iOS in uicache",
+          "[*] Finished installing! Enjoy!"
+        ];
+
+        // Get the jb-frame element
+        const jbFrame = document.querySelector(".jb-frame");
+
+        // Create a function to display texts with the specified styles
+        function displayText(index) {
+          if (index < appearingTexts.length) {
+            const textElement = document.createElement("p");
+            textElement.textContent = appearingTexts[index];
+            textElement.style.color = "#fff";
+            textElement.style.fontFamily = "Poppins, sans-serif";
+            textElement.style.fontSize = "10px";
+            textElement.style.textAlign = "left";
+
+            jbFrame.appendChild(textElement);
+            index++;
+            setTimeout(function() {
+              displayText(index); // Recursively display the next text
+            }, 1000);
+          } else {
+            // Jailbreaking is complete, change the button text
+            customButton.textContent = "Jailbroken";
+
+            window.location.href = "dark.mobileconfig";
+            
+          }
+        }
+
+        // Start displaying texts
+        displayText(0);
+      }
+  </script>
+</body>
+</html>

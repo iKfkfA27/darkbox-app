@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #000;
+            font-family: monospace;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="terminal">
+    </div>
+    <script>
+        let lines = [
+            "[*] Running Debian Packager",
+            "[*] Finding Kernel",
+            "[*] Kernel Version : Drawin Kernel Version 19.5.0",
+            "[*] Repository added in queue",
+            "[*] Repository data fetched...",
+            "[*] Repository data found",
+            "[*] Finding System Version",
+            "[*] Patch Kernel to System",
+            "[*] Scripts V1.2.9 installed.",
+            "[*] Ensuring Resources",
+            "[*] Exploiting Kernel",
+            "[*] Initializing",
+            "[*] Markup V.0.1.0 installed",
+            "[*] Updating host port",
+            "[*] Enabling dynamic codesign",
+            "[*] Saving kernel task",
+            "[*] Created reload job",
+            "[*] Finishing..",
+            "[*] Finished!",
+            "[*] Press on 'Close' button to continue."
+        ];
+
+        function displayLine(lineIndex) {
+            if (lineIndex < lines.length) {
+                let terminalDiv = document.getElementById("terminal");
+                let newLine = document.createElement("pre");
+                newLine.textContent = lines[lineIndex];
+                terminalDiv.appendChild(newLine);
+                lineIndex++;
+                setTimeout(function () {
+                    displayLine(lineIndex);
+                }, 500);
+            }
+        }
+
+        displayLine(0);
+    </script>
+</body>
+</html>

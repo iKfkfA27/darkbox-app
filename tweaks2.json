@@ -1,0 +1,74 @@
+{
+  "tweaks": [
+    {
+      "name": "NoSiri",
+      "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1164536057111523458/IMG_5556.png?ex=654391b8&is=65311cb8&hm=d58bba8e7110c16cdefe66475780da29fc249cf04ad49ec25650a292f9c2912b&",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "NoBooks",
+      "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1164536674643087443/IMG_5558.png?ex=6543924b&is=65311d4b&hm=d3c94a5ea324ac07ca5210cf2202a018a4c05094c07c380e112d9d906f1e8501&",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "Remove AppStore",
+      "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1164535138437300327/IMG_5553.png?ex=654390dd&is=65311bdd&hm=4d2476abeb8baed881a80adec52f60923b9433684454b67f54d4c143770b4dca&",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "No in-App-Purchases",
+      "iconURL": "Example4.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "No iCloud",
+      "iconURL": "Example5.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "No iCloud Photo-Sharing",
+      "iconURL": "Example6.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "No iCloud Photo-Stream",
+      "iconURL": "Example7.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "Remove-Passcode",
+      "iconURL": "https://cdn.discordapp.com/attachments/1161032945574883328/1164539195092643870/IMG_5560.png?ex=654394a4&is=65311fa4&hm=cdd152e97364b19f1f76586707c1d5dc67481c49d179acdced2deb148a275b02&",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "Clear Lock-Screen",
+      "iconURL": "Example9.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "No Camera",
+      "iconURL": "Example10.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "No Entertainment",
+      "iconURL": "Example11.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "Safe Safari",
+      "iconURL": "Example12.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "Popup-Block",
+      "iconURL": "Example13.com",
+      "downloadURL": "example.com"
+    },
+    {
+      "name": "No SS/REC",
+      "iconURL": "Example14.com",
+      "downloadURL": "example.com"
+    }
+  ]
+}

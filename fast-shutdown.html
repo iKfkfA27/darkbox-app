@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="shutdown.css">
+    <title>Fast-Shutdown - DarkBox</title>
+</head>
+<body>
+
+  <div class="modal-mask">
+    <div class="modal-wrapper">
+      <div class="modal-container">
+        <div class="modal-header">
+          <slot name="header">
+           Credits
+          </slot>
+        </div>
+        <div class="modal-body">
+          <slot name="body">
+            made by @scarletbackup & @iw.dev.og
+          </slot>
+        </div>
+        <div class="modal-footer">
+          <slot name="footer">
+            <!-- Add these buttons to your HTML -->
+            <button class="modal-default-button" id="cancelButton">
+              Cancel
+            </button>
+
+            <button class="modal-shutdown-button" id="getButton">
+              Discord Server
+            </button>
+          </slot>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get buttons by their IDs
+    const cancelButton = document.getElementById('cancelButton');
+    const getButton = document.getElementById('getButton');
+
+    // Add event listeners to the buttons
+    getButton.addEventListener('click', () => {
+      // Open Discord URL
+      window.location.href = 'https://discord.com';
+    });
+
+    cancelButton.addEventListener('click', () => {
+      // Hide the modal with a transition effect
+      const modalMask = document.querySelector('.modal-mask');
+      modalMask.style.opacity = '0';
+      modalMask.style.pointerEvents = 'none';
+    });
+  </script>
+
+
+</body>
+</html>
